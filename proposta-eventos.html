@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Proposta · Marca, site e presença digital · iNova</title>
+<meta name="description" content="Proposta comercial: construção de identidade visual, site institucional e posicionamento digital, com sistema de gestão na segunda etapa.">
+<meta name="theme-color" content="#1E3A36">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --verde:#2A4E49; --verde-esc:#1A332F; --verde-cl:#9FC2BD; --acento:#2ABA53;
+  --tinta:#161B1A; --corpo:#4A5553; --fraco:#8A9693;
+  --papel:#FFFFFF; --nevoa:#F4F8F7; --linha:#E2EBE9;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--papel);
+  color:var(--tinta);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+section{padding:92px 0}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(28px,4.4vw,44px);font-weight:800}
+h3{font-size:21px;font-weight:700}
+p{color:var(--corpo)}
+.leve{color:var(--fraco);font-weight:500}
+
+/* barra de progresso */
+.prog{position:fixed;top:0;left:0;height:3px;background:var(--acento);width:0;z-index:90;
+  transition:width .08s linear}
+
+/* topo fixo */
+.topo{position:fixed;top:0;left:0;right:0;z-index:80;padding:14px 0;
+  background:rgba(255,255,255,0);transition:.3s}
+.topo.fix{background:rgba(255,255,255,.95);backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--linha)}
+.topo-in{max-width:1060px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:16px}
+.marca{font-weight:800;font-size:17px;color:#fff;letter-spacing:-.02em;transition:.3s}
+.topo.fix .marca{color:var(--verde)}
+.marca i{font-style:normal;color:var(--verde-cl)}
+.topo.fix .marca i{color:var(--acento)}
+.esp{flex:1}
+.bt{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;
+  padding:13px 24px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;
+  text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.bt-p{background:var(--acento);color:#062312}
+.bt-p:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(42,186,83,.34)}
+.bt-f{border-color:rgba(255,255,255,.3);color:#fff}
+.bt-f:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.topo .bt{font-size:14px;padding:10px 19px}
+.topo.fix .bt-f{border-color:var(--linha);color:var(--verde)}
+
+/* capa */
+.capa{position:relative;background:var(--verde-esc);color:#fff;overflow:hidden;
+  min-height:100vh;display:flex;align-items:center;padding:140px 0 90px}
+.capa:before,.capa:after{content:'';position:absolute;border-radius:50%;filter:blur(90px)}
+.capa:before{width:620px;height:620px;background:rgba(42,186,83,.16);top:-220px;right:-160px;
+  animation:flutua 16s ease-in-out infinite}
+.capa:after{width:460px;height:460px;background:rgba(159,194,189,.14);bottom:-200px;left:-120px;
+  animation:flutua 20s ease-in-out infinite reverse}
+@keyframes flutua{0%,100%{transform:translate(0,0)}50%{transform:translate(26px,-22px)}}
+.capa .wrap{position:relative;z-index:2}
+.rot{font-size:12.5px;letter-spacing:.3em;color:var(--verde-cl);font-weight:600}
+.capa h1{font-size:clamp(40px,7.4vw,78px);font-weight:800;margin:22px 0 0}
+.capa h1 span{color:var(--verde-cl)}
+.risco{width:84px;height:5px;background:var(--acento);border-radius:3px;margin:30px 0}
+.capa .sub{font-size:clamp(17px,2.2vw,21px);color:#C9DBD8;max-width:620px;line-height:1.55}
+.cartao-capa{margin-top:52px;display:inline-flex;gap:38px;flex-wrap:wrap;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  border-radius:16px;padding:22px 30px}
+.cartao-capa div span{display:block;font-size:11.5px;letter-spacing:.22em;
+  color:var(--verde-cl);font-weight:600;margin-bottom:5px}
+.cartao-capa div b{font-size:19px;font-weight:700}
+.desce{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;
+  font-size:11.5px;letter-spacing:.2em;color:var(--verde-cl);text-align:center}
+.desce i{display:block;width:1px;height:34px;background:linear-gradient(var(--verde-cl),transparent);
+  margin:9px auto 0;animation:desce 1.8s ease-in-out infinite}
+@keyframes desce{0%,100%{opacity:.25;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+
+<header class="topo" id="topo"><div class="topo-in">
+  <div class="marca">iNova <i>·</i> proposta</div>
+  <div class="esp"></div>
+  <a class="bt bt-f" href="#investimento">Ver investimento</a>
+</div></header>
+
+<div class="capa">
+  <div class="wrap">
+    <div class="rot">PROPOSTA COMERCIAL</div>
+    <h1>Marca, site e<br><span>presença digital</span></h1>
+    <div class="risco"></div>
+    <p class="sub">Construção de identidade visual, site institucional e posicionamento
+      digital, com sistema de gestão sob medida na segunda etapa.</p>
+    <div class="cartao-capa">
+      <div><span>PROPOSTA PARA</span><b>Bruno Dantas Gomes</b></div>
+      <div><span>DATA</span><b>28/10/2026</b></div>
+      <div><span>VALIDADE</span><b>30 dias</b></div>
+    </div>
+  </div>
+  <div class="desce">ROLE<i></i></div>
+</div>
+<style>
+/* animação de entrada */
+.rev{opacity:1}
+.js .rev{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rev.on{opacity:1;transform:none}
+
+/* blocos de texto */
+.secao-rot{font-size:12px;letter-spacing:.26em;color:var(--acento);font-weight:700;margin-bottom:14px}
+.lead{font-size:clamp(18px,2.3vw,21px);line-height:1.6;max-width:720px;margin-top:20px}
+.texto{max-width:720px;margin-top:18px;font-size:17px}
+
+/* cartões de entrega */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:40px}
+.card{background:var(--papel);border:1px solid var(--linha);border-radius:18px;padding:30px 28px;
+  transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(26,51,47,.09);border-color:#CFE0DD}
+.card .num{width:40px;height:40px;border-radius:12px;background:var(--nevoa);color:var(--verde);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;margin-bottom:18px}
+.card h3{margin-bottom:14px}
+.card ul{list-style:none}
+.card li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15.5px;color:var(--corpo);line-height:1.5}
+.card li:before{content:'';position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;
+  background:var(--acento)}
+
+/* faixa escura */
+.escuro{background:var(--verde-esc);color:#fff}
+.escuro h2{color:#fff}
+.escuro p{color:#C9DBD8}
+.escuro .secao-rot{color:var(--verde-cl)}
+.escuro .card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.13)}
+.escuro .card:hover{border-color:rgba(255,255,255,.3);box-shadow:none}
+.escuro .card h3{color:#fff}
+.escuro .card li{color:#C9DBD8}
+.escuro .card .num{background:rgba(255,255,255,.1);color:#fff}
+
+/* nota */
+.nota{background:var(--nevoa);border-left:4px solid var(--verde);border-radius:0 14px 14px 0;
+  padding:24px 28px;margin-top:32px;font-size:16px;color:var(--corpo);max-width:860px}
+.nota b{color:var(--tinta)}
+.escuro .nota{background:rgba(255,255,255,.06);border-left-color:var(--acento);color:#C9DBD8}
+.escuro .nota b{color:#fff}
+
+/* motivos */
+.motivos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:40px}
+.motivo{border-top:3px solid var(--verde);padding-top:18px}
+.escuro .motivo{border-top-color:var(--acento)}
+.motivo b{display:block;font-size:17px;margin-bottom:8px}
+.motivo span{font-size:15.5px;color:var(--corpo);line-height:1.55}
+.escuro .motivo span{color:#AFC6C2}
+
+/* investimento */
+.precos{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.preco{border:1px solid var(--linha);border-radius:18px;padding:30px 28px;position:relative;
+  transition:transform .25s,box-shadow .25s}
+.preco:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(26,51,47,.09)}
+.preco .et{font-size:12px;letter-spacing:.2em;color:var(--acento);font-weight:700}
+.preco h3{margin:10px 0 6px}
+.preco .cond{font-size:14.5px;color:var(--fraco)}
+.preco .v{font-size:clamp(28px,4vw,38px);font-weight:800;color:var(--verde);margin-top:20px;
+  letter-spacing:-.03em}
+.total{margin-top:20px;background:var(--verde-esc);color:#fff;border-radius:18px;
+  padding:28px 32px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.total b{font-size:19px;font-weight:600;flex:1}
+.total .v{font-size:clamp(32px,5vw,46px);font-weight:800;letter-spacing:-.03em}
+.obs{margin-top:18px;font-size:14.5px;color:var(--fraco);max-width:760px}
+
+/* condições */
+.tab{width:100%;border-collapse:collapse;margin-top:36px}
+.tab td{padding:17px 0;border-bottom:1px solid var(--linha);font-size:16px;vertical-align:top}
+.tab td:first-child{font-weight:600;color:var(--verde);width:38%;padding-right:28px}
+.tab tr:last-child td{border-bottom:none}
+
+/* fecho */
+.fecho{background:var(--verde-esc);color:#fff;text-align:center;padding:110px 0}
+.fecho .frase{font-size:clamp(26px,4.2vw,42px);font-weight:800;line-height:1.25;
+  letter-spacing:-.03em;max-width:780px;margin:0 auto}
+.fecho .assin{margin-top:38px;font-size:15px;color:#9FC2BD;line-height:1.8}
+.fecho .bt{margin-top:38px}
+
+@media (max-width:720px){
+  section{padding:66px 0}
+  .precos{grid-template-columns:1fr}
+  .tab td{display:block;border-bottom:none;padding:5px 0}
+  .tab td:first-child{width:auto;padding-right:0}
+  .tab tr{display:block;padding:14px 0;border-bottom:1px solid var(--linha)}
+  .cartao-capa{gap:22px;padding:18px 22px}
+  .topo .bt{display:none}
+}
+@media print{
+  .topo,.prog,.desce,.fecho .bt{display:none}
+  .capa{min-height:auto;padding:40px 0}
+  .js .rev{opacity:1!important;transform:none!important}
+  section{padding:30px 0;page-break-inside:avoid}
+}
+</style>
+
+<section>
+  <div class="wrap">
+    <div class="secao-rot rev">O QUE ESTA PROPOSTA RESOLVE</div>
+    <h2 class="rev">Uma empresa de eventos<br><span class="leve">vive de confiança.</span></h2>
+    <p class="lead rev">Quem contrata uma feira, um congresso ou uma festa está entregando a
+      própria reputação na mão de alguém, e decide quase sempre pelo que encontra antes de
+      conversar: uma marca que parece sólida, um site que mostra o que já foi feito, um perfil
+      que responde.</p>
+    <p class="texto rev">Esta proposta estrutura exatamente essa primeira impressão, em duas
+      etapas. A primeira constrói a presença, nos canais onde o cliente procura. A segunda
+      organiza o que acontece depois do sim, com a gestão dos eventos num painel feito sob
+      medida para o processo da empresa.</p>
+  </div>
+</section>
+
+<section style="background:var(--nevoa)">
+  <div class="wrap">
+    <div class="secao-rot rev">ETAPA 1</div>
+    <h2 class="rev">Marca, site e <span class="leve">presença digital</span></h2>
+    <div class="cards">
+      <div class="card rev">
+        <div class="num">01</div>
+        <h3>Identidade visual completa</h3>
+        <ul>
+          <li>Logotipo nas versões horizontal, vertical e símbolo isolado</li>
+          <li>Versões para fundo claro, escuro e monocromática</li>
+          <li>Paleta de cores e tipografia definidas</li>
+          <li>Manual de identidade, com regras de uso</li>
+          <li>Modelos para redes sociais: capas, destaques e grade de posts</li>
+          <li>Assinatura de e-mail</li>
+          <li>Arquivos abertos em vetor, para gráfica e brinde</li>
+        </ul>
+      </div>
+      <div class="card rev">
+        <div class="num">02</div>
+        <h3>Site institucional</h3>
+        <ul>
+          <li>Página única, responsiva, testada em celular e computador</li>
+          <li>Seções: início, sobre, serviços, portfólio e contato</li>
+          <li>Formulário com entrega na caixa de entrada da empresa</li>
+          <li>Botão de WhatsApp integrado</li>
+          <li>Otimização para busca: título, descrição e estrutura</li>
+          <li>Publicação e apontamento do domínio</li>
+        </ul>
+      </div>
+      <div class="card rev">
+        <div class="num">03</div>
+        <h3>Posicionamento digital</h3>
+        <ul>
+          <li>Google Meu Negócio criado, verificado e otimizado</li>
+          <li>Instagram configurado: biografia, destaques e capa</li>
+          <li>Artes de abertura do perfil</li>
+          <li>Orientação de uso, para a equipe manter o padrão</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="escuro">
+  <div class="wrap">
+    <div class="secao-rot rev">ETAPA 2</div>
+    <h2 class="rev">Sistema de gestão <span style="color:#9FC2BD;font-weight:500">sob medida</span></h2>
+    <p class="lead rev">Um painel web acessado pelo navegador, sem instalação. Pensado para
+      substituir o conjunto de planilhas e conversas de WhatsApp em que a operação de eventos
+      costuma se apoiar.</p>
+    <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+      <div class="card rev">
+        <div class="num">01</div>
+        <h3>Cadastros</h3>
+        <ul><li>Clientes, com histórico de atendimentos</li>
+          <li>Fornecedores</li>
+          <li>Colaboradores</li>
+          <li>Banco de dados próprio da empresa</li></ul>
+      </div>
+      <div class="card rev">
+        <div class="num">02</div>
+        <h3>Ordem de serviço</h3>
+        <ul><li>Abertura vinculada ao cliente</li>
+          <li>Itens, responsáveis e situação</li>
+          <li>Anexo de arquivos: contrato, briefing, fotos</li>
+          <li>Envio da ordem pelo WhatsApp, em um clique</li></ul>
+      </div>
+      <div class="card rev">
+        <div class="num">03</div>
+        <h3>Calendário</h3>
+        <ul><li>Visão mensal dos eventos e das ordens</li>
+          <li>O que vem pela frente, sem planilha</li>
+          <li>Acesso por senha, de qualquer aparelho</li></ul>
+      </div>
+      <div class="card rev">
+        <div class="num">04</div>
+        <h3>Financeiro</h3>
+        <ul><li>Lançamento de entradas e saídas</li>
+          <li>Vínculo com a ordem de serviço, o cliente e o fornecedor</li>
+          <li>Situação de cada lançamento: previsto, recebido ou pago</li>
+          <li>Visão do mês, com totais de entrada, saída e saldo</li></ul>
+      </div>
+    </div>
+    <div class="nota rev"><b>Como esta etapa começa:</b> com um diagnóstico do processo atual,
+      antes de qualquer desenvolvimento. É o que garante que o painel resolva o problema certo,
+      e é quando as telas são definidas em detalhe.<br><br>
+      <b>O financeiro desta etapa é de controle, não contábil:</b> registra o que entra e o que
+      sai, amarrado à ordem de serviço, com a visão do mês. Não contempla conciliação bancária,
+      emissão de boleto, integração com banco, emissão fiscal ou relatório contábil, que
+      dependem de credenciais e certificados de terceiros.</div>
+
+    <div style="margin-top:56px">
+      <div class="secao-rot rev" style="color:var(--verde-cl)">ETAPA 3 · CONTINUIDADE</div>
+      <h2 class="rev" style="font-size:clamp(22px,3vw,30px)">O que vem depois,
+        <span style="color:#9FC2BD;font-weight:500">quando o painel já estiver rodando</span></h2>
+      <p class="texto rev" style="color:#C9DBD8">O painel nasce resolvendo o essencial. O que
+        vem abaixo depende de ver o sistema em uso: algumas dessas funções só fazem sentido
+        depois de alguns meses de ordens registradas, e outras dependem de credenciais de
+        terceiros. Cada uma é orçada separadamente, quando fizer falta de verdade.</p>
+      <div class="motivos" style="margin-top:28px">
+        <div class="motivo rev"><b>Recibo</b><span>Emissão com numeração sequencial, em PDF,
+          pronto para enviar ao cliente pelo WhatsApp.</span></div>
+        <div class="motivo rev"><b>Perfis de acesso</b><span>Entradas separadas para a equipe,
+          com permissão por módulo.</span></div>
+        <div class="motivo rev"><b>Integrações</b><span>Boleto, conciliação bancária e emissão
+          fiscal, que dependem de contrato com banco e certificado digital.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="secao-rot rev">POR QUE EM DUAS ETAPAS</div>
+    <h2 class="rev">Cada coisa <span class="leve">no seu tempo.</span></h2>
+    <div class="motivos">
+      <div class="motivo rev"><b>A marca vem primeiro</b>
+        <span>Site e perfis nascem da identidade. Fazer na ordem inversa custa retrabalho e
+        deixa dois padrões convivendo.</span></div>
+      <div class="motivo rev"><b>O sistema precisa do processo</b>
+        <span>Só dá para automatizar o que já está entendido. O diagnóstico vem antes de uma
+        linha de código.</span></div>
+      <div class="motivo rev"><b>Investimento distribuído</b>
+        <span>Cada etapa é contratada e paga separadamente, sem concentrar o desembolso num
+        mês só.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="investimento" style="background:var(--nevoa)">
+  <div class="wrap">
+    <div class="secao-rot rev">INVESTIMENTO</div>
+    <h2 class="rev">Duas etapas, <span class="leve">contratação independente.</span></h2>
+    <div class="precos">
+      <div class="preco rev">
+        <div class="et">ETAPA 1</div>
+        <h3>Marca, site e presença digital</h3>
+        <div class="cond">50% na assinatura · 50% na entrega final</div>
+        <div class="v">R$ 3.500</div>
+      </div>
+      <div class="preco rev">
+        <div class="et">ETAPA 2</div>
+        <h3>Sistema de gestão</h3>
+        <div class="cond">50% no início · 50% na entrega</div>
+        <div class="v">R$ 1.500</div>
+      </div>
+    </div>
+    <div class="total rev"><b>Total das duas etapas</b><div class="v">R$ 5.000</div></div>
+    <p class="obs rev">Condição especial de parceria, válida para esta proposta. As etapas
+      podem ser contratadas separadamente; a etapa 2 depende da conclusão da etapa 1. A etapa 3 é
+      orçada à parte, depois que o painel estiver em uso.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="secao-rot rev">CONDIÇÕES COMERCIAIS</div>
+    <h2 class="rev">Como funciona <span class="leve">na prática.</span></h2>
+    <table class="tab rev">
+      <tr><td>Prazo da identidade visual</td><td>Até 20 dias úteis</td></tr>
+      <tr><td>Prazo do site</td><td>Até 20 dias úteis após aprovação da identidade</td></tr>
+      <tr><td>Prazo do posicionamento</td><td>Até 7 dias úteis após aprovação da identidade</td></tr>
+      <tr><td>Prazo do sistema</td><td>Até 30 dias úteis após o diagnóstico</td></tr>
+      <tr><td>Revisões inclusas</td><td>2 rodadas por entrega</td></tr>
+      <tr><td>Início dos trabalhos</td><td>Após o pagamento inicial e a entrega do briefing</td></tr>
+      <tr><td>Validade desta proposta</td><td>30 dias a partir da emissão</td></tr>
+      <tr><td>Formalização</td><td>Contrato com assinatura das partes</td></tr>
+      <tr><td>Não incluso nas etapas 1 e 2</td><td>Hospedagem e registro de domínio, verba de
+        anúncio, produção de fotografia e vídeo, gestão mensal de conteúdo, emissão de
+        recibo, emissão fiscal, boleto, conciliação bancária e aplicativo para celular</td></tr>
+      <tr><td>Gestão mensal de conteúdo</td><td>Opcional, contratada à parte, a partir de
+        R$ 700 por mês</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="fecho">
+  <div class="wrap">
+    <div class="frase rev">Marca é o que dizem de você<br>quando você não está na sala.</div>
+    <a class="bt bt-p rev" id="zap" href="#" target="_blank" rel="noopener">Falar sobre a proposta</a>
+    <div class="assin rev">iNova Marketing Digital · CNPJ 47.143.576/0001-71<br>
+      Av. Dom Pedro I, 392, Sala 302, Centro, João Pessoa/PB · (83) 9669-9278</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  document.documentElement.classList.add('js');
+
+  /* WhatsApp da iNova */
+  var FONE='558396699278';
+  var RECADO='Olá! Vi a proposta de marca, site e presença digital e quero conversar.';
+  var z=document.getElementById('zap');
+  if(z) z.href='https://wa.me/'+FONE+'?text='+encodeURIComponent(RECADO);
+
+  /* barra de progresso + topo */
+  var prog=document.getElementById('prog'), topo=document.getElementById('topo');
+  function aoRolar(){
+    var y=window.pageYOffset||document.documentElement.scrollTop;
+    var alt=document.documentElement.scrollHeight-window.innerHeight;
+    if(prog) prog.style.width=(alt>0?(y/alt*100):0)+'%';
+    if(topo) topo.classList.toggle('fix', y>window.innerHeight-90);
+  }
+  window.addEventListener('scroll',aoRolar,{passive:true});
+  aoRolar();
+
+  /* entrada dos blocos */
+  var itens=[].slice.call(document.querySelectorAll('.rev'));
+  if(typeof IntersectionObserver==='function'){
+    var obs=new IntersectionObserver(function(ent){
+      ent.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); }
+      });
+    },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    itens.forEach(function(el,i){ el.style.transitionDelay=(Math.min(i%4,3)*70)+'ms'; obs.observe(el); });
+  } else {
+    itens.forEach(function(el){ el.classList.add('on'); });
+  }
+})();
+</script>
+</body>
+</html>
